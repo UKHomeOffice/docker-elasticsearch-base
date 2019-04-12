@@ -6,7 +6,6 @@ pipeline:
     tags: ${DRONE_TAG}
     secrets: [ docker_username, docker_password ]
     registry: quay.io
-    mem_limit: 8000000000
     when:
       event: tag
 
