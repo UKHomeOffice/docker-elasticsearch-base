@@ -1,0 +1,14 @@
+pipeline:
+
+  build_tag:
+    image: ukhomeoffice/drone-docker
+    repo: quay.io/ukhomeofficedigital/docker-elasticsearch-base
+    tags: 6.7.0
+    secrets: [ docker_username, docker_password ]
+    registry: quay.io
+    mem_limit: 8000000000
+    environment:
+      - VERSION=${DRONE_TAG}
+    when:
+      event: tag
+
